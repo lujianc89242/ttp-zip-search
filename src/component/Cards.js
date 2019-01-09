@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './Cards.css';
 import ZipLocation from './ZipLocation'
 
 class Cards extends Component{
     constructor(props) {
         super(props);
-      this.state = {
+        this.state = {
+
+            
           data: [
               {
                   LocationText: "New York,NY",
@@ -30,8 +33,21 @@ class Cards extends Component{
               }
           ]
       };
-  }
-    render() {
+    }
+    
+    fetchLocationData() {
+        var input = this.props.ZipInput;
+        axios.get("http://ctp-zip-api.herokuapp.com/zip/" + input.value)
+            .then(response => {
+                //var wanted = 
+                var result = response.data;
+                console.log(this.setState({ data: result }));
+            })
+            .catch(err => console.log(err));
+
+    }
+
+    render() { 
         var zipInfo = this.state.data.map((location) =>
             <ZipLocation data={location} key={location.LocationText} />
         );

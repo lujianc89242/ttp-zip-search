@@ -11,8 +11,8 @@ class ZipLocation extends Component {
             Totalwages,
         } = this.props.data;
         return ( 
-            <div>
-                <h1 className="cryptocurrency-name">{LocationText}</h1>
+            <div className="Ziplocation">
+                <h1 >{LocationText}</h1>
                 <p>State: {State}</p>
                 <p>Location: {Location}</p>
                 <p>Population: {Population}</p>

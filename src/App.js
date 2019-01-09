@@ -6,7 +6,8 @@ import Cards from './component/Cards'
 class App extends Component {
   constructor(props){
     super(props);
-    this.state = {
+      this.state = {
+
       zipCode: '',
       edit: false
     };
@@ -28,8 +29,9 @@ class App extends Component {
 
               </header>
               zipcode:
-              <input type="text" onChange= {this.handleChange.bind(this)} onSubmit={this.handleSearch.bind(this) }/>
-              <Cards />
+              <input type="text" onChange={this.handleChange.bind(this)} onSubmit={this.handleSearch.bind(this)} />
+              
+              <Cards zipInput={this.state.zipCode}/>
         </div>
       );
     }
