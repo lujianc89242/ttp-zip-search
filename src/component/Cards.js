@@ -27,6 +27,13 @@ class Cards extends Component{
     }
   }
   render(){
-    return();
+      return (
+          <div>
+              <p>Test</p>
+          </div>
+      );
+
   }
 }
+
+
