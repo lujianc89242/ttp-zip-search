@@ -4,6 +4,7 @@ import './ZipLocation.css';
 class ZipLocation extends Component {
     render() {
         var {
+            LocationText,
             State,
             Location,
             Population,
@@ -11,7 +12,12 @@ class ZipLocation extends Component {
         } = this.props.data;
         return ( 
             <div>
-                <p>State</p>
+                <h1 className="cryptocurrency-name">{LocationText}</h1>
+                <p>State: {State}</p>
+                <p>Location: {Location}</p>
+                <p>Population: {Population}</p>
+                <p>Total Wages: {Totalwages}</p>
+
             </div>
             );
         
