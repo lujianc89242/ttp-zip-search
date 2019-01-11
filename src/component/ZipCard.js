@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import './ZipLocation.css';
+import './ZipCard.css';
 
-class ZipLocation extends Component {
+class ZipCard extends Component {
     render() {
         // var name has to match with props.
         var {
-            RecordNumber,
             LocationText,
             State,
             Location,
@@ -27,4 +26,4 @@ class ZipLocation extends Component {
 
 }
 
-export default ZipLocation;
+export default ZipCard;

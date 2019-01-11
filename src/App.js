@@ -1,56 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Cards from './component/Cards'
+import SearchZip from './component/SearchZip';
 
 class App extends Component {
-  constructor(props){
-    super(props);
-      this.state = {
 
-      zipCode: '',
-      edit: false
-    };
-  }
-  handleChange(e){
-    this.setState( {zipCode: e.target.value});
-
-  }
-  handleSearch(e){
-    e.preventDefault();
-    this.setState( {edit: true} );
-  }
   render() {
-    if(this.state.edit){
+    // display Cards page   this.state.edit == true
+
       return (
         <div className="App">
           <header className="App-header">
-              <h2>Zip Code Search1</h2>
-
-              </header>
-              zipcode:
-              <input type="text" onChange={this.handleChange.bind(this)} onSubmit={this.handleSearch.bind(this)} />
-              
-              <Cards zipInput={this.state.zipCode}/>
+              <h2>Zip Code Search</h2>
+          </header>
+          <SearchZip />
         </div>
       );
     }
-    else{
-      return(
-        <div className="App">
-        <header className="App-header">
-                <h2>Zip Code Search2</h2>
-
-            </header>
-            zipcode:
-            <input type="text" onSubmit={this.handleSearch.bind(this)} />
-            <button onClick={this.handleSearch.bind(this)}>Search</button>
-      </div>);
 
 
-    }
-
-  }
 }
 
 export default App;
